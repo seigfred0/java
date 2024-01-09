@@ -16,7 +16,6 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
         Scanner myScanner = new Scanner(System.in);
         System.out.println("What's Your Name:");
 
@@ -26,22 +25,52 @@ public class App {
         System.out.println("A. Geography Geeks");
         System.out.println("B. Tech Tidbits");
         System.out.println("C. Riddles");
-        System.out.println("D. Movie Madness");
+        System.out.println("D. Politics");
         System.out.print("Choose Topic: ");
 
         String choice = myScanner.next();
-        // String category;
+        String category = "";
 
         switch (choice.toLowerCase()) {
             case "a":
                 System.out.println("------------------------------------------------");
-                String category = "Geography Geeks";
+                category = "Geography Geeks";
+                System.out.println(
+                        "Welcome to " + category + " where your knowledge will be tested. Are you ready? " + username);
+
+                System.out.println("Yes or No");
+                String yesOrNo = myScanner.next();
+
+                if (yesOrNo.equalsIgnoreCase("yes")) {
+                    System.out.println("Yes chosen");
+                } else {
+                    System.out.println("Better luck next time");
+                }
+
+                break;
+            case "b":
+                System.out.println("------------------------------------------------");
+                category = "Tech Tidbits";
+                System.out.println(
+                        "Welcome to " + category + " where your knowledge will be tested. Are you ready? " + username);
+                break;
+            case "c":
+                System.out.println("------------------------------------------------");
+                category = "Riddles";
+                System.out.println(
+                        "Welcome to " + category + " where your knowledge will be tested. Are you ready? " + username);
+                break;
+            case "d":
+                System.out.println("------------------------------------------------");
+                category = "Politics";
                 System.out.println(
                         "Welcome to " + category + " where your knowledge will be tested. Are you ready? " + username);
                 break;
 
             default:
+                System.out.print("Dumb the letter you choose is not in the choices.");
                 break;
+
         }
 
     }
